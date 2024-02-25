@@ -1,0 +1,72 @@
+[alias]
+  a = "!git status --short | peco | awk '{print $2}' | xargs git add"
+  ba = branch -a
+  bd = branch -d
+  bm = branch --merged
+  bn = branch --no-merged
+  br = branch
+  ca = commit -a
+  ci = commit
+  co = checkout
+  d = diff
+  df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+  pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+  ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  st = status
+  dump = cat-file -p
+  find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  open = "!hub browse"
+  type = cat-file -t
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+
+[color]
+  branch = auto
+  diff = auto
+  grep = auto
+  interactive = auto
+  status = auto
+  ui = auto
+
+[core]
+  editor = nvim
+  excludesfile = ~/.gitignore
+  ignorecase = false
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = nvim -d "$LOCAL" "$REMOTE"
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  required = true
+  smudge = git-lfs smudge -- %f
+
+[github]
+  user = (user)
+
+[hub]
+  protocol = https
+
+[init]
+  defaultBranch = main
+
+[mergetool "nvimdiff"]
+  cmd = nvim -d "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+  trustExitCode = true
+
+[push]
+  autoSetupRemote = true
+  default = simple
+
+[safe]
+  directory = *
+
+[user]
+  email = (email)
+  name = (name)

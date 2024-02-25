@@ -1,0 +1,6 @@
+extras
+java
+main
+nerd-fonts
+nonportable
+versions

@@ -1,0 +1,4 @@
+ilancosman/tide@v6
+jethrokuan/z
+jorgebucaran/nvm.fish
+PatrickF1/fzf.fish

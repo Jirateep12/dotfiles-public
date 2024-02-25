@@ -1,0 +1,19 @@
+customCommands:
+  - key: "a"
+    command: "git add ."
+    context: "files"
+    description: "Add all files"
+    loadingText: "Adding all files"
+    subprocess: true
+  - key: "c"
+    command: "git cz"
+    context: "files"
+    description: "Commit with commitizen"
+    loadingText: "Opening commitizen commit tool"
+    subprocess: true
+  - key: "r"
+    command: "git rebase -i --root"
+    context: "files"
+    description: "Rebase from root"
+    loadingText: "Opening rebase tool"
+    subprocess: true

@@ -1,0 +1,24 @@
+# Install visual studio code extensions.
+code --install-extension bradlc.vscode-tailwindcss --force
+code --install-extension brittanychiang.halcyon-vscode --force
+code --install-extension christian-kohler.path-intellisense --force
+code --install-extension codeium.codeium --force
+code --install-extension dbaeumer.vscode-eslint --force
+code --install-extension dsznajder.es7-react-js-snippets --force
+code --install-extension esbenp.prettier-vscode --force
+code --install-extension formulahendry.auto-close-tag --force
+code --install-extension formulahendry.auto-rename-tag --force
+code --install-extension gencer.html-slim-scss-css-class-completion --force
+code --install-extension github.copilot --force
+code --install-extension github.copilot-chat --force
+code --install-extension leonardssh.vscord --force
+code --install-extension pkief.material-icon-theme --force
+code --install-extension ritwickdey.liveserver --force
+code --install-extension sdras.vue-vscode-snippets --force
+code --install-extension shd101wyy.markdown-preview-enhanced --force
+code --install-extension vscodevim.vim --force
+code --install-extension vue.volar --force
+code --install-extension xabikos.javascriptsnippets --force
+
+# List installed visual studio code extensions.
+code --list-extensions

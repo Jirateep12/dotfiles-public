@@ -1,13 +1,13 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
-if (Get-Module -Name PSReadLine -ListAvailable) {
-  $profile_omp = "$PSScriptRoot/jirateep12_black.omp.json"
-  oh-my-posh init pwsh --config $profile_omp | Invoke-Expression
-  Set-PSReadLineOption -EditMode Emacs -BellStyle None
-  Set-PSReadLineKeyHandler -Chord "enter" -Function ValidateAndAcceptLine
-  Set-PSReadLineKeyHandler -Chord "ctrl+d" -Function DeleteChar
-  Set-PsFzfOption -PSReadlineChordProvider "ctrl+f" -PSReadlineChordReverseHistory "ctrl+r"
-}
+$profile_omp = "$PSScriptRoot/jirateep12_black.omp.json"
+oh-my-posh init pwsh --config $profile_omp | Invoke-Expression
+
+Set-PSReadLineOption -EditMode Emacs -BellStyle None
+Set-PSReadLineKeyHandler -Chord "enter" -Function ValidateAndAcceptLine
+Set-PSReadLineKeyHandler -Chord "ctrl+d" -Function DeleteChar
+
+Set-PsFzfOption -PSReadlineChordProvider "ctrl+f" -PSReadlineChordReverseHistory "ctrl+r"
 
 Set-Alias vim "nvim"
 Set-Alias g "git"

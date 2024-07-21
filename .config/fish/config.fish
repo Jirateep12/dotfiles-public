@@ -33,18 +33,18 @@ alias resize_dock "$HOME/.script/resize_dock.sh"
 python3 "$HOME/.script/filter_history.py"
 
 if test -d /opt/homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 end
 
 if not test -d "$HOME/Developers"
-    mkdir -p "$HOME/Developers"
+  mkdir -p "$HOME/Developers"
 end
 
 switch (uname)
-    case Darwin
-        source (dirname (status --current-filename))/config_osx.fish
-    case Linux
-        source (dirname (status --current-filename))/config_linux.fish
+case Darwin
+  source (dirname (status --current-filename))/config_osx.fish
+case Linux
+  source (dirname (status --current-filename))/config_linux.fish
 end
 
 export XDG_CONFIG_HOME="$HOME/.config"
